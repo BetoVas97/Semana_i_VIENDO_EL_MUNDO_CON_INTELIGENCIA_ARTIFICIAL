@@ -14,7 +14,7 @@ Integrantes **equipo Rocket**:
 * Jesús Heriberto Vásquez Sánchez - A01377358 - ISC- 5to semestre.
 * José Daniel Alillo Martínez - A01372158 - ISC - 5to semestre.
 --------------------------------------------------------------------------
-**Idea general**
+**Idea general.**
 
 En la actualidad se vive un ritmo de vida demasiado agitado y en la cual los seres humanos no se encuentran preparados ante situaciones de peligro que van desde un terremoto, tsunami, incendio, explosiones y hasta asaltos o secuestros.
 
