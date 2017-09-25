@@ -4,7 +4,7 @@ Proyecto de inteligencia artificial (utilizando cognitive services de Microsoft 
 
 Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
 
-Fecha: 25/09/2017 - 29/09/2017
+Fecha: 25/09/2017 - 29/09/2017.
 
 --------------------------------------------------------------------------
 Integrantes **equipo Rocket**:
