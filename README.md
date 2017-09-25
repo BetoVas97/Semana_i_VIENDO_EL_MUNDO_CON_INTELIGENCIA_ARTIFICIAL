@@ -6,7 +6,7 @@ Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
 
 Fecha: 25/09/2017 - 29/09/2017
 
-Desarrollo de aplicación móvil utillizando **Unity** para la detección de desastres y se notifique al servicio oficial correspondiente por
+Desarrollo de aplicación móvil utillizando *Unity* para la detección de desastres y se notifique al servicio oficial correspondiente por
 medio de un correo electrónico para que se pueda atender el problema.
 --------------------------------------------------------------------------
 Integrantes **equipo Rocket**:
