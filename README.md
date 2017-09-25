@@ -1,20 +1,29 @@
 # Reto Semana i :           VIENDO_EL_MUNDO_CON_NTELIGENCIA_ARTIFICIAL
-Fecha: 25/09/2017 - 29/09/2017.
+
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12177670/30831439-13dcc3a4-a20d-11e7-866a-37f875b04868.jpg)">
+</p>
 
 Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
-![image](https://user-images.githubusercontent.com/12177670/30831439-13dcc3a4-a20d-11e7-866a-37f875b04868.jpg)
+Fecha: 25/09/2017 - 29/09/2017.
 
 **Desarrollado en Unity 2017 1.1f1**
 
 ![unity-logo-100571261-large-180x180](https://user-images.githubusercontent.com/12177670/30831575-86456a72-a20d-11e7-8d2b-54387c832b24.png)
 
+Uso de los servicios cognitivos de Microsoft: https://azure.microsoft.com/es-mx/services/cognitive-services/
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/12177670/30831442-16396648-a20d-11e7-9155-7581235fa8db.png">
+</p>
+
+
+**Descripción**
 Proyecto de inteligencia artificial (utilizando cognitive services de Microsoft Azure) para la semana i del semestre Agosto-Diciembre 2017.  Desarrollo de aplicación móvil utillizando Unity para la detección de desastres y se notifique al servicio oficial correspondiente por medio de un correo electrónico para que se pueda atender el problema.
 
 
-Uso de los servicios cognitivos de Microsoft: https://azure.microsoft.com/es-mx/services/cognitive-services/
 
-
-![cognitive-services](https://user-images.githubusercontent.com/12177670/30831442-16396648-a20d-11e7-9155-7581235fa8db.png)
 
 --------------------------------------------------------------------------
 Integrantes **equipo Rocket**:
