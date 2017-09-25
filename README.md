@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12177670/30831439-13dcc3a4-a20d-11e7-866a-37f875b04868.jpg)">
+  <img src="https://user-images.githubusercontent.com/12177670/30831439-13dcc3a4-a20d-11e7-866a-37f875b04868.jpg">
 </p>
 
 Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
