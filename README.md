@@ -1,4 +1,4 @@
-# Reto Semana i :           VIENDO_EL_MUNDO_CON_NTELIGENCIA_ARTIFICIAL
+# Reto Semana i :           VIENDO_EL_MUNDO_CON_INTELIGENCIA_ARTIFICIAL
 
 
 <p align="center">
