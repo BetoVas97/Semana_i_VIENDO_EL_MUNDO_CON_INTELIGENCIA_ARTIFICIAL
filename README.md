@@ -5,8 +5,8 @@
   <img src="https://user-images.githubusercontent.com/12177670/30831439-13dcc3a4-a20d-11e7-866a-37f875b04868.jpg">
 </p>
 
-Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
-Fecha: 25/09/2017 - 29/09/2017.
+* Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
+* Fecha: 25/09/2017 - 29/09/2017.
 
 **Desarrollado en Unity 2017 1.1f1**
 
