@@ -1,6 +1,6 @@
 # Reto Semana i :           VIENDO_EL_MUNDO_CON_NTELIGENCIA_ARTIFICIAL
 
-**Desarrollado en Unitu 2017 1.1f1**
+**Desarrollado en Unity 2017 1.1f1**
 
 Proyecto de inteligencia artificial (utilizando cognitive services de Microsoft Azure) para la semana i del semestre Agosto-Diciembre 2017.  Desarrollo de aplicación móvil utillizando Unity para la detección de desastres y se notifique al servicio oficial correspondiente por medio de un correo electrónico para que se pueda atender el problema.
 
