@@ -11,8 +11,9 @@ Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
 
 Servicios cognitivos de Microsoft: https://azure.microsoft.com/es-mx/services/cognitive-services/
 
+<p align="center">
 ![cognitive-services](https://user-images.githubusercontent.com/12177670/30831442-16396648-a20d-11e7-9155-7581235fa8db.png)
-
+</p>
 Fecha: 25/09/2017 - 29/09/2017.
 
 --------------------------------------------------------------------------
