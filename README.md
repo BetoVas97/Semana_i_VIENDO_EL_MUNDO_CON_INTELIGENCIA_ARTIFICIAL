@@ -5,6 +5,7 @@
 Proyecto de inteligencia artificial (utilizando cognitive services de Microsoft Azure) para la semana i del semestre Agosto-Diciembre 2017.  Desarrollo de aplicación móvil utillizando Unity para la detección de desastres y se notifique al servicio oficial correspondiente por medio de un correo electrónico para que se pueda atender el problema.
 
 Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
+Servicios cognitivos de Microsoft: https://azure.microsoft.com/es-mx/services/cognitive-services/
 
 Fecha: 25/09/2017 - 29/09/2017.
 
