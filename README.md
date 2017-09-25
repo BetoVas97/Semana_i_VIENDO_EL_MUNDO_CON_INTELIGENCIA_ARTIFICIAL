@@ -6,7 +6,7 @@
 </p>
 
 * Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
-* Periodo de desarrolllo: 25/09/2017 - 29/09/2017.
+* Periodo de desarrolllo: 25/09/2017 - 29/09/2017
 * Uso de los servicios cognitivos de Microsoft: https://azure.microsoft.com/es-mx/services/cognitive-services/
 
 <p align="center">
@@ -23,8 +23,6 @@
 <p>
 Proyecto de inteligencia artificial (utilizando cognitive services de Microsoft Azure) para la semana i del semestre Agosto-Diciembre 2017.  Desarrollo de aplicación móvil utillizando Unity para la detección de desastres y se notifique al servicio oficial correspondiente por medio de un correo electrónico para que se pueda atender el problema.
 </p>
-
-
 
 --------------------------------------------------------------------------
 Integrantes **equipo Rocket**:
