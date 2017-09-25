@@ -16,7 +16,7 @@
 * **Desarrollado en Unity 2017 1.1f1**
 
 <p align="center">
-![unity-logo-100571261-large-180x180](https://user-images.githubusercontent.com/12177670/30831575-86456a72-a20d-11e7-8d2b-54387c832b24.png)
+<img src="https://user-images.githubusercontent.com/12177670/30831575-86456a72-a20d-11e7-8d2b-54387c832b24.png">
 </p>
 
 **Descripción**
