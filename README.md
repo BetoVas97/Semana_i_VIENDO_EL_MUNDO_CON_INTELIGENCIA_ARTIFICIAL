@@ -6,7 +6,7 @@
 </p>
 
 * Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
-* Fecha: 25/09/2017 - 29/09/2017.
+* Periodo de desarrolllo: 25/09/2017 - 29/09/2017.
 * Uso de los servicios cognitivos de Microsoft: https://azure.microsoft.com/es-mx/services/cognitive-services/
 
 <p align="center">
