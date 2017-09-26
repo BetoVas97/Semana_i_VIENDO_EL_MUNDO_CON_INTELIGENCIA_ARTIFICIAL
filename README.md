@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<h1 class="w3-jumbo w3-center w3-animate-top">Reto Semana i :           VIENDO_EL_MUNDO_CON_INTELIGENCIA_ARTIFICIAL</h1></br> 
+# Reto Semana i :           VIENDO_EL_MUNDO_CON_INTELIGENCIA_ARTIFICIAL
 
 
 <p align="center">
