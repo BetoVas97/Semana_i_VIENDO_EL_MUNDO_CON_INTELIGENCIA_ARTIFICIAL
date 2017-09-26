@@ -108,6 +108,56 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &764229540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 764229542}
+  - component: {fileID: 764229541}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &764229541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764229540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28d46688ea858c4d88d303ca2990a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ifo: 'fire forest tree plant dark red yellow fireplace mountain '
+  ire: ' fire building outdoor street smoke city'
+  tsu: ' water, nature, wave, wet, beach, surfing, sand, ocean '
+  phe: ' Laying, lying, woman, man, floor, sleeping, outdoor, street, ground, red '
+  earth: 'old, pile, rock, ground, street '
+  ifoN: 0
+  ireN: 0
+  tsuN: 0
+  pheN: 0
+  earthN: 0
+--- !u!4 &764229542
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764229540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &913477210
 Prefab:
   m_ObjectHideFlags: 0
