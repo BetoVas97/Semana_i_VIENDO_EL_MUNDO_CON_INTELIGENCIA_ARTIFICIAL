@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 1566576577}
   - component: {fileID: 1566576576}
   m_Layer: 0
-  m_Name: Cubito
+  m_Name: Cubitox2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
