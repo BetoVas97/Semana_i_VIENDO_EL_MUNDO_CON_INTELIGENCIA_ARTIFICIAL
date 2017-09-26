@@ -1,9 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ejemplo : MonoBehaviour {
-
     //banco de palabras.
     public string ifo = "fire forest tree plant dark red yellow fireplace mountain "; //incendio forestal
     public string ire = " fire building outdoor street smoke city"; //incendio en un edificio, residencia
@@ -12,6 +10,10 @@ public class ejemplo : MonoBehaviour {
     public string earth = "old, pile, rock, ground, street, house, building, dirt "; //terremoto
     public string auto = " car, street, road,old, city, truck, motorcycle, dirt ";  //accidente de tránsito
     public string sink = " boat, ocean, large, man,water, floating, watercraft, lake "; //hundimiento de barco
+    public string animal = " animal attack reptile mammal"; // animal salvaje
+    public string traf = "traffic,light, outdoor, signal, red, yellow, green, " +
+        "sign city street light"; //semáforo descompuesto
+    public string flood = "outdoor, building, water, car, street, person, man, city, people, house, church, woman";
 
 
     //metricas para saber cual es el suceso de la imagen :v
@@ -22,7 +24,10 @@ public class ejemplo : MonoBehaviour {
     public float earthN = 0;
     public float autoN = 0;
     public float sinkN = 0;
-    
+    public float animalN = 0;
+    public float trafN = 0;
+    public float floodN = 0;
+
 
     // Use this for initialization
     void Start ()
@@ -30,17 +35,17 @@ public class ejemplo : MonoBehaviour {
         string[] sub = { "hello", "dog", "sleeping", "nature", "street", "wave", "sand", "man", "rock", "woman","lake"
         ,"watercraft","dirt","smoke"};
         int x = 0;
-        while (x < sub.Length)
+        while (x < sub.Length)//hace un loop para todos los tag
         {
-            Check(sub[x]);
+            Check(sub[x]);//determina a que siniestro corresponde determinado tag
             x++;
         }
         string[] sin= { "incendio forestal", "incendio de residencia", "tsunami", "persona herida", "terremot"
-                , "accidente de transito", "barco hundido" };
-        float[] siniestros = {ifoN, ireN, tsuN, pheN, earthN, autoN, sinkN };
+                , "accidente de transito", "barco hundido", "ataque animal", "semaforo", "Inundacion" }; 
+        //arreglo de siniestros
+        float[] siniestros = {ifoN, ireN, tsuN, pheN, earthN, autoN, sinkN, animalN, trafN, floodN};
+        //arreglo
         
-        //print("forestal: "+ ifoN+ "\n incendio residencial: "+ ireN+ "\n tsunami: "+ tsuN+ "\n persona herida" +
-        //  ": "+pheN+ "\n terremoto: "+ earthN);
         print(acomodar(siniestros, sin));
 
     }
@@ -114,6 +119,30 @@ public class ejemplo : MonoBehaviour {
             if (sub.Equals("ship") ||  sub.Equals("watercraft"))
             {
                 sinkN++;
+            }
+        }
+        else if (animal.Contains(sub))
+        {
+            animalN++;
+            if (sub.Equals("animal") || sub.Equals("mammal"))
+            {
+                animalN++;
+            }
+        }
+        else if (traf.Contains(sub))
+        {
+            trafN++;
+            if (sub.Equals("traffic") || sub.Equals("light") || sub.Equals("sign"))
+            {
+                trafN++;
+            }
+        }
+        else if (flood.Contains(sub))
+        {
+            sinkN++;
+            if (sub.Equals("building") || sub.Equals("street"))
+            {
+                floodN++;
             }
         }
     }
