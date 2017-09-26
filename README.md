@@ -38,7 +38,7 @@ En la actualidad se vive un ritmo de vida demasiado agitado y en la cual los ser
 
 Algunos buscan la forma de poder solicitar ayuda de la manera mas rápida y efectiva, pero no siempre es así. Pensando en los acontecimientos sufridos en México el pasado día 19 de Septiembre del año 2017, para ofrecer un apoyo a la comunidad por lo anterior se han buscado opciones que gracias a la tecnología permiten ofrecer esa ayuda inmediata que una persona solicita.
 
-Es por eso que hemos considerado crear una plataforma/aplicación en la cual se permita capturar por medio de una fotografía un siniestro que requiera ayuda, dicha herramienta que se encuentra en fase de prototipo busca que se automatice esa solicitud de emergencia que junto con la imágen y las herramientas proporcionadas por Microsoft puedan solucionar ese problema de eficacion y respuesta inmediata a un suceso o desastre natural/antropogénico.
+Es por eso que hemos considerado crear una plataforma/aplicación en la cual se permita capturar por medio de una fotografía un siniestro que requiera ayuda, dicha herramienta que se encuentra en fase de prototipo busca que se automatice esa solicitud de emergencia que junto con la imágen y las herramientas proporcionadas por Microsoft puedan solucionar ese problema de eficacia y respuesta inmediata a un suceso o desastre natural/antropogénico.
 
 --------------------------------------------------------------------------
 
