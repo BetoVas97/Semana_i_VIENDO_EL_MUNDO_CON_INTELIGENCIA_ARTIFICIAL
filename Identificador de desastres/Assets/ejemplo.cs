@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ejemplo : MonoBehaviour {
 
-    public string ifo =  "fire forest tree plant dark red yellow fireplace mountain " ;
-    public string ire = " fire building outdoor street smoke city" ;
-    public string tsu =  " water, nature, wave, wet, beach, surfing, sand, ocean " ;
-    public string phe = " Laying, lying, woman, man, floor, sleeping, outdoor, street, ground, red " ;
-    public string earth =  "old, pile, rock, ground, street " ;
+    //banco de palabras.
+    public string ifo =  "fire forest tree plant dark red yellow fireplace mountain " ; //incendio forestal
+    public string ire = " fire building outdoor street smoke city" ; //incendio en un edificio, residencia
+    public string tsu =  " water, nature, wave, wet, beach, surfing, sand, ocean " ; //tsunami
+    public string phe = " Laying, lying, woman, man, floor, sleeping, outdoor, street, ground, red " ; //persona herida.
+    public string earth =  "old, pile, rock, ground, street " ; //terremoto
 
+    //metricas para saber cual es el suceso de la imagen :v
     public float ifoN = 0;
     public float ireN = 0;
     public float tsuN = 0;
