@@ -32,15 +32,15 @@ public class ejemplo : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        string[] sub = { "hello", "dog", "sleeping", "nature", "street", "wave", "sand", "man", "rock", "woman","lake"
-        ,"watercraft","dirt","smoke"};
+        string[] sub = { "hello", "dog", "sleeping", "nature", "street",  "sand", "man", "rock", "woman","lake"
+        ,"dirt","smoke", "animal", "mamal", "attack", "reptile"};
         int x = 0;
         while (x < sub.Length)//hace un loop para todos los tag
         {
             Check(sub[x]);//determina a que siniestro corresponde determinado tag
             x++;
         }
-        string[] sin= { "incendio forestal", "incendio de residencia", "tsunami", "persona herida", "terremot"
+        string[] sin= { "incendio forestal", "incendio de residencia", "tsunami", "persona herida", "terremoto"
                 , "accidente de transito", "barco hundido", "ataque animal", "semaforo", "Inundacion" }; 
         //arreglo de siniestros
         float[] siniestros = {ifoN, ireN, tsuN, pheN, earthN, autoN, sinkN, animalN, trafN, floodN};
@@ -72,7 +72,7 @@ public class ejemplo : MonoBehaviour {
                 }
             }
         }
-        return ("Es un: \n"+sin[0]+"\n o \n un "+sin[1]);
+        return ("Es un: \n"+sin[0]+lista[0]+" \n o \n un "+sin[1] + lista[1]);
     }
 
     void Check(string sub)
@@ -90,7 +90,7 @@ public class ejemplo : MonoBehaviour {
             ireN++;
             if (sub.Equals("building"))
             {
-                ifoN++;
+                ireN++;
             }
         }
         else if (tsu.Contains(sub))
@@ -139,7 +139,7 @@ public class ejemplo : MonoBehaviour {
         }
         else if (flood.Contains(sub))
         {
-            sinkN++;
+            floodN++;
             if (sub.Equals("building") || sub.Equals("street"))
             {
                 floodN++;
