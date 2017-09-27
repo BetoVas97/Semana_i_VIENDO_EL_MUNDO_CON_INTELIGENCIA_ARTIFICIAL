@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 2017.1.1f1:3.1.0.0
-=======
-2017.1.1f1:2.3.0.0
->>>>>>> c4870ce65e63203aeee143c5aaa3f4451879ab48
 StandaloneWindows64
 C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll
 C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll
