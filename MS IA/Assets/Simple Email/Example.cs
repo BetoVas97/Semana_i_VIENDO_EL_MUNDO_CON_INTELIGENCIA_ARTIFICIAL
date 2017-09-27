@@ -5,6 +5,8 @@ using System;
 
 public class Example : MonoBehaviour {
 
+    public int imagesCounter;
+
     bool triggerResultEmail= false;
     bool resultEmailSucess;
 
@@ -20,6 +22,7 @@ public class Example : MonoBehaviour {
     public InputField AttachFile;
 
     void Start () {
+        imagesCounter = PlayerPrefs.GetInt("imgCounter");
         SMTPClient.text = PlayerPrefs.GetString("SMTPClient");
         SMTPPort.text = PlayerPrefs.GetString("SMTPPort");
         UserName.text = PlayerPrefs.GetString("UserName");
@@ -51,7 +54,11 @@ public class Example : MonoBehaviour {
         SimpleEmailSender.emailSettings.UserName = UserName.text.Trim();
         SimpleEmailSender.emailSettings.UserPass = UserPass.text.Trim();
 
-        SimpleEmailSender.Send(To.text, Subject.text, Body.text, AttachFile.text, SendCompletedCallback);
+        //SimpleEmailSender.Send(To.text, Subject.text, Body.text, AttachFile.text, SendCompletedCallback);
+        //debug
+        string datafile = Application.dataPath + "SavedScreen," + imagesCounter + ".png";
+        SimpleEmailSender.Send(To.text, Subject.text, Body.text, datafile, SendCompletedCallback);
+        //endDebug
     }
 
     private void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
@@ -71,4 +78,7 @@ public class Example : MonoBehaviour {
             triggerResultEmail = true;
         }
     }
+    public void sendEmailTwo(){
+        Invoke("sendEmail", 0.5f);
+	}
 }
