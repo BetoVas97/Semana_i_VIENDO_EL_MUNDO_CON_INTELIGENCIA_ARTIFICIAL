@@ -23,6 +23,9 @@ public class cubeCamera : MonoBehaviour {
 			StartCoroutine(CaptureTextureAsPNG());
 		}
 	}
+    public void Shoot(){
+        StartCoroutine(CaptureTextureAsPNG());
+    }
 	IEnumerator CaptureTextureAsPNG()
 	{
 		yield return new WaitForEndOfFrame();
@@ -31,7 +34,8 @@ public class cubeCamera : MonoBehaviour {
 		_TextureFromCamera.SetPixels((GetComponent<Renderer>().material.mainTexture as WebCamTexture).GetPixels());
 		_TextureFromCamera.Apply();
 		byte[] bytes = _TextureFromCamera.EncodeToPNG();
-        string filePath = Application.dataPath + "/Assets/SavedScreen," + imagesCounter + ".png";
+        string filePath = Application.dataPath + "SavedScreen," + imagesCounter + ".png";
+        print(Application.dataPath); 
 		//+ "screenshots/" +
 		File.WriteAllBytes(filePath, bytes);
 
