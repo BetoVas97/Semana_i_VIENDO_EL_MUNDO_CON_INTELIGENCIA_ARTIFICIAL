@@ -6,6 +6,8 @@
 </p>
 
 * Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
+* Liga a metodología Kanban (Trello): https://trello.com/b/NYhSkT0r/semana-i-viendo-el-mundo-con-inteligencia-artificial
+* Liga repositorio Github: https://github.com/TheIE100/Semana_i_VIENDO_EL_MUNDO_CON_INTELIGENCIA_ARTIFICIAL/
 * Periodo de desarrolllo: 25/09/2017 - 29/09/2017
 * Uso de los servicios cognitivos de Microsoft: https://azure.microsoft.com/es-mx/services/cognitive-services/
 
