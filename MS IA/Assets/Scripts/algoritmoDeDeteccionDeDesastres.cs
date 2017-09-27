@@ -11,7 +11,7 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
     public string ire = " fire building outdoor street smoke city"; //incendio en un edificio, residencia
     public string tsu = " water, nature, wave, wet, beach, surfing, sand, ocean "; //tsunami
     public string phe = " Laying, lying, woman, man, floor, sleeping, outdoor, street, ground, red "; //persona herida.
-    public string earth = "old, pile, rock, ground, street, house, building, dirt "; //terremoto
+    public ArrayList earth =  new ArrayList {"old", "pile","rock","ground","street","house","building", "dirt"}; //terremoto
     public string auto = " car, street, road,old, city, truck, motorcycle, dirt ";  //accidente de tránsito
     public string sink = " boat, ocean, large, man,water, floating, watercraft, lake "; //hundimiento de barco
     public string animal = " animal attack reptile mammal"; // animal salvaje
@@ -21,7 +21,7 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
 
     //ArrayList de tags recaudadas de la imagen analizada con ImageToComputerVisionAPI.
 
-    ArrayList sub = new ArrayList {"hello", "dog", "sleeping", "nature", "street", "sand", "man", "rock", "woman", "lake"
+    ArrayList tagsDetectadosDeImagenes = new ArrayList {"hello", "dog", "sleeping", "nature", "street", "sand", "man", "rock", "woman", "lake"
         , "dirt", "smoke", "animal", "mamal", "attack", "reptile"};  //esto son los de default para las pruebas pero seran substitudios al invocar la clase en ImageToComputerVisionAPI.cs
 
     //metricas para saber cual es el suceso de la imagen :v
@@ -40,16 +40,15 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
     //CONSTRUCTOR
     public AlgoritmoDeDeteccionDeDesastres(JSONObject tags)
     {
-        this.sub = new ArrayList(tags.Count); //se crea un nuevo arraylist de la clase.
+        this.tagsDetectadosDeImagenes = new ArrayList(tags.Count); //se crea un nuevo arraylist de la clase.
         
         //Los tags son un JSONObject, es una especie de lista pero esta no se puede convertir de manera explicita en una lista comund e strings, por lo hay que hacerlo a manita como si fuera en C:
         for (int i = 0; i < tags.Count; i++)
         {
-            this.sub.Add(tags.list[i].ToString()); //se visita cada elemento y se agrega al arraylist de la clase
+            this.tagsDetectadosDeImagenes.Add(tags.list[i].ToString()); //se visita cada elemento y se agrega al arraylist de la clase         
         }
 
         this.realizarDeteccionDeSiniestro();
-
     }
 
     // inicializaciond de variables
@@ -59,10 +58,9 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
 
     }
 
-
     public void realizarDeteccionDeSiniestro() {
 
-        foreach (string elementoTag in this.sub) //hace un "loop mejrado" para visitar los tag
+        foreach (string elementoTag in this.tagsDetectadosDeImagenes) //hace un "loop mejrado" para visitar los tag
         {
             //print(elementoTag); //imprime cada tag
             Check(elementoTag);//modifica variables globales para determinar a que siniestro corresponde determinado conjunto de tags recolectado previamente con la recoleccion de información
@@ -70,9 +68,9 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
         //lista de siniestros
         string[] sin = { "incendio forestal", "incendio de residencia", "tsunami", "persona herida", "terremoto"
                 , "accidente de transito", "barco hundido", "ataque animal", "semaforo", "Inundacion" };
-        //lista de las estadisticas recaudadas
-        float[] siniestros = { this.ifoN, this.ireN, this.tsuN, this.pheN, this.earthN, this.autoN, this.sinkN, this.animalN, this.trafN, this.floodN };
-        print(acomodar(siniestros, sin));
+        //lista de los puntajes para determinar de que desastre se trata.
+        float[] listaPuntajeDesastre = { this.ifoN, this.ireN, this.tsuN, this.pheN, this.earthN, this.autoN, this.sinkN, this.animalN, this.trafN, this.floodN };
+        print(acomodar(listaPuntajeDesastre, sin));
     }
 
 
@@ -100,72 +98,76 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
         return ("Es un: \n" + sin[0] +" "+  lista[0] + " \n o \n un " + sin[1] +" "+ lista[1]);
     }
 
-    void Check(string sub)
+    void Check(string tagLeidoConFormateoInadecuado)
     {
-        if (ifo.Contains(sub))
+
+        string[] tagLeido=  tagLeidoConFormateoInadecuado.Split('\"'); //generando una lista para quitar las comillas integradas en el string de json y asi poder hace rla evaluacion correspondiente
+        //el primer elemento de la lista generada es el tag que queremos!!! :)
+        if (ifo.Contains(tagLeido[1]))
         {
             ifoN++;
-            if (sub.Equals("nature") || sub.Equals("tree"))
+            if (tagLeido[1].Equals("nature") || tagLeido[1].Equals("tree"))
             {
                 ifoN++;
             }
         }
-        else if (ire.Contains(sub))
+         if (ire.Contains(tagLeido[1].ToString()))
         {
             ireN++;
-            if (sub.Equals("building"))
+            if (tagLeido[1].Equals("building"))
             {
                 ireN++;
             }
         }
-        else if (tsu.Contains(sub))
+         if (tsu.Contains(tagLeido[1]))
         {
-            if (sub.Equals("surfing"))
+            if (tagLeido[1].Equals("surfing"))
             {
                 tsuN++;
             }
             tsuN++;
         }
-        else if (earth.Contains(sub))
+         if (earth.Contains(tagLeido[1]))
         {
+            print("entro ***:v**");
             earthN++;
         }
-        else if (auto.Contains(sub))
+         if (auto.Contains(tagLeido[1]))
         {
             autoN++;
-            if (sub.Equals("car") || sub.Equals("truck"))
+            if (tagLeido[1].Equals("car") || tagLeido[1].Equals("truck"))
             {
                 autoN++;
             }
         }
-        else if (sink.Contains(sub))
+         if (sink.Contains(tagLeido[1]))
         {
             sinkN++;
-            if (sub.Equals("ship") || sub.Equals("watercraft"))
+            if (tagLeido[1].Equals("ship") || tagLeido[1].Equals("watercraft"))
             {
                 sinkN++;
             }
         }
-        else if (animal.Contains(sub))
+         if (animal.Contains(tagLeido[1]))
         {
             animalN++;
-            if (sub.Equals("animal") || sub.Equals("mammal"))
+            if (tagLeido[1].Equals("animal") || tagLeido[1].Equals("mammal"))
             {
                 animalN++;
             }
         }
-        else if (traf.Contains(sub))
+         if (traf.Contains(tagLeido[1]))
         {
             trafN++;
-            if (sub.Equals("traffic") || sub.Equals("light") || sub.Equals("sign"))
+            if (tagLeido[1].Equals("traffic") || tagLeido[1].Equals("light") || tagLeido[1].Equals("sign"))
             {
                 trafN++;
             }
         }
-        else if (flood.Contains(sub))
+         if (flood.Contains(tagLeido[1]))
         {
             floodN++;
-            if (sub.Equals("building") || sub.Equals("street"))
+            if (tagLeido[1].Equals("building") || tagLeido[1].Equals("street"))
             {
                 floodN++;
             }
