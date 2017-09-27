@@ -7,17 +7,17 @@ using UnityEngine;
 public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
 {
     //banco de palabras - TAGS.
-    public string ifo = "fire forest tree plant dark red yellow fireplace mountain forest "; //incendio forestal
-    public string ire = " fire building outdoor street smoke city fireplace"; //incendio en un edificio, residencia
+    public string ifo = "fire forest tree grass yellow plant dark red yellow fireplace mountain forest "; //incendio forestal
+    public string ire = " fire building outdoor street yellow smoke city traffic fireplace"; //incendio en un edificio, residencia
     public string tsu = " water, nature, wave, wet, city beach, surfing, sand, ocean, mountain, large "; //tsunami
-    public string phe = " Laying, lying, woman, man, floor, sleeping, outdoor, street, ground, red "; //persona herida.
-    public string earth = "old, pile,gray rock, ground,street,house,building, dirt,sign, church tower"; //terremoto
+    public string phe = "outdoor sitting girl boy person laying, lying, woman, man, floor, sleeping, outdoor, street, ground, red "; //persona herida.
+    public string earth = "rock rocky old, pile,gray rock, ground,street,house,building, dirt,sign, church tower"; //terremoto
     public string auto = " car, street, road,old, city, truck, motorcycle, dirt ";  //accidente de tránsito
     public string sink = " boat, ocean, large, man,water, floating, watercraft, lake "; //hundimiento de barco
     public string animal = " animal attack reptile mammal"; // animal salvaje
     public string traf = "traffic,light, outdoor, signal, red, yellow, green, " +
         "sign city street light"; //semáforo descompuesto
-    public string flood = "outdoor, building, water, car, street, person, man, city, people, house, church, woman";
+    public string flood = " building, water, car, street, person, man, city, people, house,  woman";
 
     //ArrayList de tags recaudadas de la imagen analizada con ImageToComputerVisionAPI.
 
@@ -62,8 +62,13 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
 
         foreach (string elementoTag in this.tagsDetectadosDeImagenes) //hace un "loop mejrado" para visitar los tag
         {
-            //print(elementoTag); //imprime cada tag
-            Check(elementoTag);//modifica variables globales para determinar a que siniestro corresponde determinado conjunto de tags recolectado previamente con la recoleccion de información
+            string[] tagLeido = elementoTag.Split('\"');
+            if (tagLeido[1].Equals("smiling"))
+            {
+                PlayerPrefs.SetString("siniestro", "ERROR");
+                return ("ERROR");
+            }
+            Check(tagLeido[1]);//modifica variables globales para determinar a que siniestro corresponde determinado conjunto de tags recolectado previamente con la recoleccion de información
         }
         //lista de siniestros
         string[] sin = { "incendio forestal", "incendio de residencia", "tsunami", "persona herida", "terremoto"
@@ -101,79 +106,91 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
         return (sin[0]);
     }
 
-    void Check(string tagLeidoConFormateoInadecuado)
+    void Check(string tagLeido)
     {
 
-        string[] tagLeido=  tagLeidoConFormateoInadecuado.Split('\"'); //generando una lista para quitar las comillas integradas en el string de json y asi poder hace rla evaluacion correspondiente
+        //string[] tagLeido=  tagLeidoConFormateoInadecuado.Split('\"'); //generando una lista para quitar las comillas integradas en el string de json y asi poder hace rla evaluacion correspondiente
         //el primer elemento de la lista generada es el tag que queremos!!! :)
-        if (ifo.Contains(tagLeido[1]))
+        
+        if (ifo.Contains(tagLeido))
         {
             ifoN++;
-            if (tagLeido[1].Equals("nature") || tagLeido[1].Equals("light") || tagLeido[1].Equals("forest") || tagLeido[1].Equals("tree") || tagLeido[1].Equals("fire") || tagLeido[1].Equals("smoke"))
+            if (tagLeido.Equals("grass") || tagLeido.Equals("dark") || tagLeido.Equals("light") || tagLeido.Equals("nature")
+                ||tagLeido.Equals("forest") || tagLeido.Equals("tree") || tagLeido.Equals("fire") ||tagLeido.Equals("smoke"))
             {
                 ifoN++;
             }
         }
-         if (ire.Contains(tagLeido[1].ToString()))
+         if (ire.Contains(tagLeido.ToString()))
         {
             ireN++;
-            if (tagLeido[1].Equals("building") || tagLeido[1].Equals("smoke") || tagLeido[1].Equals("fire") || tagLeido[1].Equals("street"))
+            if (tagLeido.Equals("building") || tagLeido.Equals("smoke") || tagLeido.Equals("fire") 
+                || tagLeido.Equals("street") || tagLeido.Equals("fireplace"))
             {
                 ireN++;
             }
         }
-         if (tsu.Contains(tagLeido[1]))
+         if (tsu.Contains(tagLeido))
         {
-            if (tagLeido[1].Equals("surfing")|| tagLeido[1].Equals("ocean")|| tagLeido[1].Equals("wave") || tagLeido[1].Equals("large"))
+            if (tagLeido.Equals("surfing")|| tagLeido.Equals("ocean")|| tagLeido.Equals("wave") || tagLeido.Equals("large"))
             {
                 tsuN++;
             }
             tsuN++;
         }
-         if (earth.Contains(tagLeido[1]))
+         if (earth.Contains(tagLeido))
         {
-            if (tagLeido[1].Equals("building") || tagLeido[1].Equals("street") || tagLeido[1].Equals("house") || tagLeido[1].Equals("outdoor"))
+            if (tagLeido.Equals("building") || tagLeido.Equals("street") || tagLeido.Equals("house") 
+                || tagLeido.Equals("outdoor"))
             {
                 earthN++;
             }
             earthN++;
         }
-         if (auto.Contains(tagLeido[1]))
+         if (auto.Contains(tagLeido))
         {
             autoN++;
-            if (tagLeido[1].Equals("car") || tagLeido[1].Equals("truck") || tagLeido[1].Equals("street"))
+            if (tagLeido.Equals("car") || tagLeido.Equals("truck") || tagLeido.Equals("street") || tagLeido.Equals("old"))
             {
                 autoN++;
             }
         }
-         if (sink.Contains(tagLeido[1]))
+         if (sink.Contains(tagLeido))
         {
             sinkN++;
-            if (tagLeido[1].Equals("ship") || tagLeido[1].Equals("watercraft") || tagLeido[1].Equals("ocean"))
+            if (tagLeido.Equals("ship") || tagLeido.Equals("watercraft") || tagLeido.Equals("ocean"))
             {
                 sinkN++;
             }
         }
-         if (animal.Contains(tagLeido[1]))
+         if (animal.Contains(tagLeido))
         {
             animalN++;
-            if (tagLeido[1].Equals("animal") || tagLeido[1].Equals("mammal"))
+            if (tagLeido.Equals("animal") || tagLeido.Equals("mammal"))
             {
                 animalN++;
             }
         }
-         if (traf.Contains(tagLeido[1]))
+        if (phe.Contains(tagLeido))
+        {
+            pheN++;
+            if (tagLeido.Equals("laying") || tagLeido.Equals("lying") )
+            {
+                pheN++;
+            }
+        }
+        if (traf.Contains(tagLeido))
         {
             trafN++;
-            if (tagLeido[1].Equals("traffic") || tagLeido[1].Equals("light") || tagLeido[1].Equals("sign"))
+            if (tagLeido.Equals("traffic") || tagLeido.Equals("light") || tagLeido.Equals("sign"))
             {
                 trafN++;
             }
         }
-         if (flood.Contains(tagLeido[1]))
+         if (flood.Contains(tagLeido))
         {
             floodN++;
-            if (tagLeido[1].Equals("building") || tagLeido[1].Equals("street") || tagLeido[1].Equals("water"))
+            if (tagLeido.Equals("building") || tagLeido.Equals("street") || tagLeido.Equals("water"))
             {
                 floodN++;
             }
