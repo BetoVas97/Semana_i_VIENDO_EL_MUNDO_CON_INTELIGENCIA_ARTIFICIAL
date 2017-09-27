@@ -50,3 +50,4 @@ public class ImageToComputerVisionAPI : MonoBehaviour {
         GetComponent<ParseComputerVisionResponse>().ParseJSONData(responseData);
     }
 }
+

@@ -19,6 +19,10 @@ public class ShowImageOnPanel : MonoBehaviour {
         {
             DisplayImage();
         }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            DisplayFace();
+        }
 	} 
 
     void DisplayImage()
@@ -28,6 +32,15 @@ public class ShowImageOnPanel : MonoBehaviour {
         //byte[] fileData = File.ReadAllBytes(fileName);
 		byte[] fileData = System.IO.File.ReadAllBytes(fileName);
         imageTxtr.LoadImage(fileData);
+        ImageFrameObject.GetComponent<Renderer>().material.mainTexture = imageTxtr;        
+    }
+    void DisplayFace()
+    {
+        Texture2D imageTxtr = new Texture2D(2, 2);
+        string fileName = gameObject.GetComponent<FaceToComputerVisionAPI>().fileName;        
+        byte[] fileData = System.IO.File.ReadAllBytes(fileName);
+        imageTxtr.LoadImage(fileData);
         ImageFrameObject.GetComponent<Renderer>().material.mainTexture = imageTxtr;
+
     }
 }
