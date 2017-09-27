@@ -11,7 +11,7 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
     public string ire = " fire building outdoor street smoke city fireplace"; //incendio en un edificio, residencia
     public string tsu = " water, nature, wave, wet, city beach, surfing, sand, ocean, mountain, large "; //tsunami
     public string phe = " Laying, lying, woman, man, floor, sleeping, outdoor, street, ground, red "; //persona herida.
-    public string earth = "old, pile,gray rock, ground,street,house,building, dirt"; //terremoto
+    public string earth = "old, pile,gray rock, ground,street,house,building, dirt,sign, church tower"; //terremoto
     public string auto = " car, street, road,old, city, truck, motorcycle, dirt ";  //accidente de tránsito
     public string sink = " boat, ocean, large, man,water, floating, watercraft, lake "; //hundimiento de barco
     public string animal = " animal attack reptile mammal"; // animal salvaje
@@ -109,7 +109,7 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
         if (ifo.Contains(tagLeido[1]))
         {
             ifoN++;
-            if (tagLeido[1].Equals("nature") || tagLeido[1].Equals("tree") || tagLeido[1].Equals("fire") || tagLeido[1].Equals("smoke"))
+            if (tagLeido[1].Equals("nature") || tagLeido[1].Equals("light") || tagLeido[1].Equals("forest") || tagLeido[1].Equals("tree") || tagLeido[1].Equals("fire") || tagLeido[1].Equals("smoke"))
             {
                 ifoN++;
             }
@@ -132,7 +132,7 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
         }
          if (earth.Contains(tagLeido[1]))
         {
-            if (tagLeido[1].Equals("building") || tagLeido[1].Equals("street") )
+            if (tagLeido[1].Equals("building") || tagLeido[1].Equals("street") || tagLeido[1].Equals("house") || tagLeido[1].Equals("outdoor"))
             {
                 earthN++;
             }
