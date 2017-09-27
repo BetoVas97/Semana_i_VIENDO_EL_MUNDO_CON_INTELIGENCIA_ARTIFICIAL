@@ -23,6 +23,10 @@ public class ShowImageOnPanel : MonoBehaviour {
         {
             DisplayFace();
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            DisplayEmotion();
+        }
 	} 
 
     void DisplayImage()
@@ -42,5 +46,13 @@ public class ShowImageOnPanel : MonoBehaviour {
         imageTxtr.LoadImage(fileData);
         ImageFrameObject.GetComponent<Renderer>().material.mainTexture = imageTxtr;
 
+    }
+    void DisplayEmotion()
+    {
+        Texture2D imageTxtr = new Texture2D(2, 2);
+        string fileName = gameObject.GetComponent<EmotionToComputerApi>().fileName;
+        byte[] fileData = System.IO.File.ReadAllBytes(fileName);
+        imageTxtr.LoadImage(fileData);
+        ImageFrameObject.GetComponent<Renderer>().material.mainTexture = imageTxtr;
     }
 }
