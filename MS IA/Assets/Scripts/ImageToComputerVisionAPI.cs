@@ -14,7 +14,7 @@ public class ImageToComputerVisionAPI : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        fileName = Path.Combine(Application.streamingAssetsPath, "cityphoto.jpg"); // Replace with your file
+        fileName = Path.Combine(Application.streamingAssetsPath, "inunda.jpg"); // Replace with your file
     }
 	
 	// Update is called once per frame
