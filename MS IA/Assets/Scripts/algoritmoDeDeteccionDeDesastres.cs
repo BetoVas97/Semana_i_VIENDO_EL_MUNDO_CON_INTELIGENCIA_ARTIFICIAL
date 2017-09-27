@@ -45,7 +45,7 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
         //Los tags son un JSONObject, es una especie de lista pero esta no se puede convertir de manera explicita en una lista comund e strings, por lo hay que hacerlo a manita como si fuera en C:
         for (int i = 0; i < tags.Count; i++)
         {
-            this.sub.Add(tags.list[i]); //se visita cada elemento y se agrega al arraylist d ela clase
+            this.sub.Add(tags.list[i].ToString()); //se visita cada elemento y se agrega al arraylist de la clase
         }
 
         this.realizarDeteccionDeSiniestro();
@@ -62,9 +62,10 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
 
     public void realizarDeteccionDeSiniestro() {
 
-        foreach (var elementoTag in this.sub) //hace un "loop mejrado" para visitar los tag
+        foreach (string elementoTag in this.sub) //hace un "loop mejrado" para visitar los tag
         {
-            Check(elementoTag.ToString());//modifica variables globales para determinar a que siniestro corresponde determinado conjunto de tags recolectado previamente con la recoleccion de información
+            //print(elementoTag); //imprime cada tag
+            Check(elementoTag);//modifica variables globales para determinar a que siniestro corresponde determinado conjunto de tags recolectado previamente con la recoleccion de información
         }
         //lista de siniestros
         string[] sin = { "incendio forestal", "incendio de residencia", "tsunami", "persona herida", "terremoto"
@@ -96,7 +97,7 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
                 }
             }
         }
-        return ("Es un: \n" + sin[0] + lista[0] + " \n o \n un " + sin[1] + lista[1]);
+        return ("Es un: \n" + sin[0] +" "+  lista[0] + " \n o \n un " + sin[1] +" "+ lista[1]);
     }
 
     void Check(string sub)
