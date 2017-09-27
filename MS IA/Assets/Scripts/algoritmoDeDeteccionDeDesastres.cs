@@ -58,7 +58,7 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
 
     }
 
-    public void realizarDeteccionDeSiniestro() {
+    public string realizarDeteccionDeSiniestro() {
 
         foreach (string elementoTag in this.tagsDetectadosDeImagenes) //hace un "loop mejrado" para visitar los tag
         {
@@ -70,7 +70,8 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
                 , "accidente de transito", "barco hundido", "ataque animal", "semaforo", "Inundacion" };
         //lista de los puntajes para determinar de que desastre se trata.
         float[] listaPuntajeDesastre = { this.ifoN, this.ireN, this.tsuN, this.pheN, this.earthN, this.autoN, this.sinkN, this.animalN, this.trafN, this.floodN };
-        print(acomodar(listaPuntajeDesastre, sin));
+        print (acomodar(listaPuntajeDesastre, sin));
+        return (acomodar(listaPuntajeDesastre, sin));
     }
 
 
@@ -95,7 +96,8 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
                 }
             }
         }
-        return ("Es un: \n" + sin[0] +" "+  lista[0] + " \n o \n un " + sin[1] +" "+ lista[1]);
+        //return ("Es un: \n" + sin[0] +" "+  lista[0] + " \n o tambien \n un " + sin[1] +" "+ lista[1]);
+        return (sin[0] + "*"+ sin[1]);
     }
 
     void Check(string tagLeidoConFormateoInadecuado)
@@ -129,7 +131,6 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
         }
          if (earth.Contains(tagLeido[1]))
         {
-            print("entro ***:v**");
             earthN++;
         }
          if (auto.Contains(tagLeido[1]))
