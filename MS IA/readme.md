@@ -33,3 +33,7 @@ Replace the following triggers with your own mechanism for selecting and display
 Space: Calls the Cognitive Services API using your API key to validate and analyzing the sample photo 'cityphoto' in the Streaming Assets folder.
 
 P: Display the image on the plane
+
+
+
+# OPEN SOURCE.
