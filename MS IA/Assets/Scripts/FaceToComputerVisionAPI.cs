@@ -13,13 +13,14 @@ public class FaceToComputerVisionAPI : MonoBehaviour {
     public string fileName { get; private set; }
     string responseData;
 
+    public int imagesCounter;
     // Use this for initialization
     void Start () {
-        fileName = Path.Combine(Application.streamingAssetsPath, "face.jpg"); // Replace with your file
+        imagesCounter = PlayerPrefs.GetInt("imgCounter");
     }
 
-    // Update is called once per frame
-    void Update(){
+		// Update is called once per frame
+		void Update(){
         // This will be called with your specific input mechanism
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
@@ -33,7 +34,9 @@ public class FaceToComputerVisionAPI : MonoBehaviour {
         /// <returns> IEnumerator - needs to be called in a Coroutine </returns>
         IEnumerator GetVisionDataFromImages()
         {
-            byte[] bytes = System.IO.File.ReadAllBytes(fileName);
+		fileName = Application.persistentDataPath + "/phota.png"; // Replace with your file
+
+		byte[] bytes = System.IO.File.ReadAllBytes(fileName);
             var headers = new Dictionary<string, string>() {
             { "Ocp-Apim-Subscription-Key", VISIONKEY },
             { "Content-Type", "application/octet-stream" }
@@ -48,9 +51,16 @@ public class FaceToComputerVisionAPI : MonoBehaviour {
         //print("Imprimiendo objeto JSON: " + dataArray.ToString()); //json ejemplo: "categories":[{"name":"dark_fire","score":0.90625}],"description":{"tags":["smoke","train","coming","track","grass","steam","air","country","clouds","old","forest","fire","dark","stop","mountain","throwing","sun","riding","intersection","water"],"captions":[{"text":"a train on a track with smoke coming out of it","confidence":0.2727745}]},"requestId":"79ebe576-ffe1-4518-96de-07f03b83138a","metadata":{"width":1280,"height":720,"format":"Jpeg"},"color":{"dominantColorForeground":"Brown","dominantColorBackground":"Brown","dominantColors":["Brown","Orange"],"accentColor":"C79304","isBWImg":false}}
         //GUARDAR LOS DATOS QUE QUEREMOS
         print("Respuesta EN FACETOCOMPUTER-genero: " + dataArray.list[0].list[2].list[2]+"\nFACECOMPUTER-edad: "+dataArray.list[0].list[2].list[3]);
-        
-        
-        
-
+        PlayerPrefs.SetString("edad",""+dataArray.list[0].list[2].list[3]);
+        PlayerPrefs.SetString("genero", "" + dataArray.list[0].list[2].list[2]);
     }
+	public void callImageRecognition()
+	{
+		Invoke("enlace", 2.0f);
+
+	}
+	public void enlace()
+	{
+		StartCoroutine(GetVisionDataFromImages());
+	}
 }

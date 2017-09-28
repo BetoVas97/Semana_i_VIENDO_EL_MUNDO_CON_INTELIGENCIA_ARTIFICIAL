@@ -26,7 +26,7 @@ public class PlayerLocationService : MonoBehaviour {
 			Debug.Log ("Locations is not enabled.");
 
 			//NOTE: If location is not enabled, we initialize the postion of the player to somewhere in Los Angeles, just for demonstration purposes
-			loc.setLatLon_deg (34.020553f, -118.288515f); 
+			loc.setLatLon_deg (19.597417f, -99.226850f); 
 
 			GameManager.Instance.playerStatus = GameManager.PlayerStatus.FreeFromDevice;
 			// To get the game run on Editor without location services
@@ -81,4 +81,7 @@ public class PlayerLocationService : MonoBehaviour {
 			yield return new WaitForSeconds(locationUpdateInterval);
 		}
 	}
+    public void hola(){
+        
+    }
 }

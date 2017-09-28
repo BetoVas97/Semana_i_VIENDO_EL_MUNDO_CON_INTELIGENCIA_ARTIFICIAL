@@ -47,5 +47,38 @@ public class SimpleEmailSender
             callback("", new AsyncCompletedEventArgs(ex, true, ""));
         }
     }
+	public static void Send(string to, string subject, string body, string attachFile, string attachFileTwo, Action<object, AsyncCompletedEventArgs> callback)
+	{
+		try
+		{
+			SmtpClient mailServer = new SmtpClient(emailSettings.STMPClient, emailSettings.SMTPPort);
+			mailServer.EnableSsl = true;
+			mailServer.Credentials = new NetworkCredential(emailSettings.UserName, emailSettings.UserPass) as ICredentialsByHost;
+			ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) {
+				return true;
+			};
+
+			MailMessage msg = new MailMessage(emailSettings.UserName, to);
+			msg.Subject = subject;
+			msg.Body = body;
+			if (attachFile != null && !attachFile.Equals(""))
+				if (File.Exists(attachFile))
+					msg.Attachments.Add(new Attachment(attachFile));
+            
+            if (attachFileTwo != null && !attachFile.Equals(""))
+				if (File.Exists(attachFileTwo))
+					msg.Attachments.Add(new Attachment(attachFileTwo));
+            
+			mailServer.SendCompleted += new SendCompletedEventHandler(callback);
+			mailServer.SendAsync(msg, "");
+
+			Debug.Log("SimpleEmail: Sending Email.");
+		}
+		catch (Exception ex)
+		{
+			Debug.LogWarning("SimpleEmail: " + ex);
+			callback("", new AsyncCompletedEventArgs(ex, true, ""));
+		}
+	}
 }
 

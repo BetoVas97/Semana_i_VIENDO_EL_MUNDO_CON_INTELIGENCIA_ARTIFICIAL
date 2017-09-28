@@ -19,8 +19,6 @@ public class ShowImageOnPanel : MonoBehaviour {
         {
             DisplayImage();
         }
-        
-        
 	} 
 
     void DisplayImage()
@@ -30,8 +28,6 @@ public class ShowImageOnPanel : MonoBehaviour {
         //byte[] fileData = File.ReadAllBytes(fileName);
 		byte[] fileData = System.IO.File.ReadAllBytes(fileName);
         imageTxtr.LoadImage(fileData);
-        ImageFrameObject.GetComponent<Renderer>().material.mainTexture = imageTxtr;        
+        ImageFrameObject.GetComponent<Renderer>().material.mainTexture = imageTxtr;
     }
-    
-   
 }
