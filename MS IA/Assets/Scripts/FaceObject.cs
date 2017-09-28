@@ -21,8 +21,9 @@ public class FaceObject
 
         string highemo = "" + GetHighestWeighedEmotion().ToString();
         PlayerPrefs.SetString("emocion","" + GetHighestWeighedEmotion().ToString());
+        string siniestro = PlayerPrefs.GetString("siniestro");
         string[] a = highemo.Split(" : "[0]);
-        if (a[0] == "happiness"){
+        if (a[0] == "happiness" || siniestro == "" || siniestro == "ERROR"){
             advert.SetActive(true);
             Debug.Log("se activo advertencia");
         }

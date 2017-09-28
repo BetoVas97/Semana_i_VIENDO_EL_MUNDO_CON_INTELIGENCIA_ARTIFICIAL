@@ -74,4 +74,3 @@ public class Category
         return name + " : " + score;
     }
 }
-

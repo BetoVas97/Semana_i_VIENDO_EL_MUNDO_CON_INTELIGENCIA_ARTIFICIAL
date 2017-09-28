@@ -64,7 +64,7 @@ public class AlgoritmoDeDeteccionDeDesastres : MonoBehaviour
 		foreach (string elementoTag in this.tagsDetectadosDeImagenes) //hace un "loop mejrado" para visitar los tag
 		{
 			string[] tagLeido = elementoTag.Split('\"');
-			if (tagLeido[1].Equals("smiling"))
+			if (tagLeido[1].Equals("smiling"))//SI HAY PERSONAS SONRIENDO EN UN SINIESTRO, SIGNIFICA QUE NO ES UN SINIESTRO PORQUE ESTAN ASUSTADOS NORMALMENTE
 			{
 				PlayerPrefs.SetString("siniestro", "ERROR");
 				return ("ERROR");
