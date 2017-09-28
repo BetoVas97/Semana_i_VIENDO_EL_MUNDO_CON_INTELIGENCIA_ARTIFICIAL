@@ -46,5 +46,5 @@ Es por eso que hemos considerado crear una plataforma/aplicación en la cual se 
 
 La aplicación  muestra en primer pantalla las opciones para:
   * Reportar siniestros. (Abre la cámara para tomar una fotografía, al tomar la fotografia se utilizan los servicios cognitivos de Microsoft para analizar esta fotografía y mediante el proceso automatizado de la aplicación se detecta el tipo de siniestro y muestra un aviso para que de esta forme se confirme los datos recolectados del incidente, así como la dirección en donde se tomo esta foto y de ser así, el usuario puede confirmar esta información y hacer el envio de datos al servicio correspondiente que este fue seleccionado previamente por la aplicación).
-  * Historial de sinietros reportados. (Historial de los siniestros reportados, es decir, los que se lograron enviar y los datos recolectados de esa foto).
-  * Acerca de.
+ * iniciar sesión. (obtener datos de facebook para los reportes, se piensa que en el futuro se puedan aprovechar mas funcionalidades con la red social).
+ * Acerca de. (Muestra información acerca del eqy)-
