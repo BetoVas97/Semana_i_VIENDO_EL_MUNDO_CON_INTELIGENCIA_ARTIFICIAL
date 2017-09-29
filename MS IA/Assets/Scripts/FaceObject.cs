@@ -21,9 +21,10 @@ public class FaceObject
 
         string highemo = "" + GetHighestWeighedEmotion().ToString();
         PlayerPrefs.SetString("emocion","" + GetHighestWeighedEmotion().ToString());
-        string siniestro = PlayerPrefs.GetString("siniestro");
+        string siniestro = PlayerPrefs.GetString("siniestro"); //se solicito el siniestro para que la momento de tomar la fotografia sepa de que siniestro se trata.
         string[] a = highemo.Split(" : "[0]);
-        if (a[0] == "happiness" || siniestro == "" || siniestro == "ERROR"){
+        if (a[0] == "happiness" || siniestro == "" || siniestro == "ERROR") //si el siniestro indica un string vacio (es un siniestro no pensado en nuestros casos en la clase algoritmoDeDeteccionDeDesastres.cs) o un caso ERROR, entonces de igual manera se debe de indicar que es un reporte no válido.
+        { 
             advert.SetActive(true);
             Debug.Log("se activo advertencia");
         }
