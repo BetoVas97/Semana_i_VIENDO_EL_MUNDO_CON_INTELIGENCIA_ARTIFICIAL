@@ -1,50 +1,34 @@
-# Reto Semana i :           VIENDO_EL_MUNDO_CON_INTELIGENCIA_ARTIFICIAL.
+
+# OPEN SOURCE.
+
+Utilizando herramientras proporcionadas en el siguiente repositorio: https://github.com/misslivirose/unity-cognitive-services-demos/tree/master/unity-vision-demo
+
+## Setup
+If you need instructions for setting up your machine for HoloLens development, check out the instructions on the [HoloLens Developer Site](https://www.microsoft.com/microsoft-hololens/en-us/developers).
+
+1. Sign up for a [Cognitive Services](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api) Computer Vision API key. You will need this to access the API endpoints.
+
+2. Clone the project to your local machine and open the project in Unity. 
+
+3. Go to Scripts > ImageToComputerVisionAPI and replace the YOURVISIONKEYHERE string with your Computer Vision API key.
+
+4. Run the application in the editor. Press 'P' to show the image on screen and the space bar to call the API request. The list of categories, as well as the category with the highest match, is printed in the debug console.
+
+## Components
+This demo contains the following components:
+
+* FoundImageObject.cs: A class that wraps around the Computer Vision response returned by the API request
+* ImageToComputerVisionAPI.cs: Script that handles the API call and returns the results as a JSON string
+* ParseComputerVisionResponse.cs: Uses the JSON utility (included) to convert the JSON array to a list of FoundImageObjects
+* ShowImageOnPanel.cs: Displays the photo onto a panel
+
+ cityphoto.jpg with your own image. If you rename it, update line 19 in ImageToComputerVisionAPI.cs to reflect the new image name.
+
+## Keyboard Shortcuts
+Replace the following triggers with your own mechanism for selecting and displaying photos. 
+
+Space: Calls the Cognitive Services API using your API key to validate and analyzing the sample photo 'cityphoto' in the Streaming Assets folder.
+
+P: Display the image on the plane
 
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/12177670/30831439-13dcc3a4-a20d-11e7-866a-37f875b04868.jpg">
-</p>
-
-* Proyecto hecho en una semana: https://semanai.itesm.mx/semana-i/
-* Liga a metodología Kanban (Trello): https://trello.com/b/NYhSkT0r/semana-i-viendo-el-mundo-con-inteligencia-artificial
-* Liga repositorio Github: https://github.com/TheIE100/Semana_i_VIENDO_EL_MUNDO_CON_INTELIGENCIA_ARTIFICIAL/
-* Periodo de desarrolllo: 25/09/2017 - 29/09/2017
-* Uso de los servicios cognitivos de Microsoft: https://azure.microsoft.com/es-mx/services/cognitive-services/
-
-<p align="center">
- <img src="https://user-images.githubusercontent.com/12177670/30831442-16396648-a20d-11e7-9155-7581235fa8db.png">
-</p>
-
-* **Desarrollado en Unity 2017 1.1f1**
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/12177670/30831575-86456a72-a20d-11e7-8d2b-54387c832b24.png">
-</p>
-
-**Descripción**
-<p>
-Proyecto de inteligencia artificial (utilizando cognitive services de Microsoft Azure) para la semana i del semestre Agosto-Diciembre 2017.  Desarrollo de aplicación móvil utillizando Unity para la detección de desastres y se notifique al servicio oficial correspondiente por medio de un correo electrónico para que se pueda atender el problema.
-</p>
-
---------------------------------------------------------------------------
-Integrantes **equipo Rocket**:
-* **Irvin Emmanuel Trujillo Diaz - A01370082 -ISC - 7mo semestre.**
-* **Allan Ivan Ramirez Alanis - A01169661 - ISC - 7mo semestre.**
-* **Gerardo Ezequiel Magdaleno Hernández - A01377029  - ISC - 5to semestre.**
-* **Jesús Heriberto Vásquez Sánchez - A01377358 - ISC- 5to semestre.**
-* **José Daniel Alillo Martínez - A01372158 - ISC - 5to semestre.**
---------------------------------------------------------------------------
-**Idea general.**
-
-En la actualidad se vive un ritmo de vida demasiado agitado y en la cual los seres humanos no se encuentran preparados ante situaciones de peligro que van desde un terremoto, tsunami, incendio, explosiones y hasta asaltos o secuestros.
-
-Algunos buscan la forma de poder solicitar ayuda de la manera más rápida y efectiva, pero no siempre es así. Pensando en los acontecimientos sufridos en México el pasado día 19 de Septiembre del año 2017, para ofrecer un apoyo a la comunidad por lo anterior se han buscado opciones que gracias a la tecnología permiten ofrecer esa ayuda inmediata que una persona solicita.
-
-Es por eso que hemos considerado crear una plataforma/aplicación en la cual se permita capturar por medio de una fotografía un siniestro que requiera ayuda, dicha herramienta que se encuentra en fase de prototipo busca que se automatice esa solicitud de emergencia que junto con la imágen y las herramientas proporcionadas por Microsoft puedan solucionar ese problema de eficacia y respuesta inmediata a un suceso o desastre natural/antropogénico.
-
---------------------------------------------------------------------------
-
-La aplicación  muestra en primer pantalla las opciones para:
-  * Reportar siniestros. (Abre la cámara para tomar una fotografía, al tomar la fotografia se utilizan los servicios cognitivos de Microsoft para analizar esta fotografía y mediante el proceso automatizado de la aplicación se detecta el tipo de siniestro y muestra un aviso para que de esta forme se confirme los datos recolectados del incidente, así como la dirección en donde se tomo esta foto y de ser así, el usuario puede confirmar esta información y hacer el envio de datos al servicio correspondiente que este fue seleccionado previamente por la aplicación).
- * iniciar sesión. (obtener datos de facebook para los reportes, se piensa que en el futuro se puedan aprovechar mas funcionalidades con la red social).
- * Acerca de. (Muestra información acerca del equipo)
