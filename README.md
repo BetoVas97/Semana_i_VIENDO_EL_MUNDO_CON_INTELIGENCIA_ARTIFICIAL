@@ -15,7 +15,7 @@
  <img src="https://user-images.githubusercontent.com/12177670/30831442-16396648-a20d-11e7-9155-7581235fa8db.png">
 </p>
 
-* **Desarrollado en Unity 2017 1.1f1**
+* **Desarrollado en Unity 5.6.3f3**
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/12177670/30831575-86456a72-a20d-11e7-8d2b-54387c832b24.png">
