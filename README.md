@@ -28,7 +28,7 @@ Proyecto de inteligencia artificial (utilizando cognitive services de Microsoft 
 
 --------------------------------------------------------------------------
 Integrantes **equipo Rocket**:
-* **Irvin Emmanuel Trujillo Diaz - A01370082 -ISC - 7mo semestre.**
+* **Irvin Emmanuel Trujillo Díaz - A01370082 -ISC - 7mo semestre.**
 * **Allan Ivan Ramirez Alanis - A01169661 - ISC - 7mo semestre.**
 * **Gerardo Ezequiel Magdaleno Hernández - A01377029  - ISC - 5to semestre.**
 * **Jesús Heriberto Vásquez Sánchez - A01377358 - ISC- 5to semestre.**
